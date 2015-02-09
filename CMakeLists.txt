@@ -62,6 +62,9 @@ if (CPP11_FLAG)
 endif ()
 
 add_library(format ${FMT_SOURCES})
+install(FILES format.h DESTINATION include)
+install(TARGETS format LIBRARY DESTINATION lib)
+
 if (CMAKE_COMPILER_IS_GNUCXX)
   set_target_properties(format PROPERTIES COMPILE_FLAGS
     "-Wall -Wextra -Wshadow -pedantic")
